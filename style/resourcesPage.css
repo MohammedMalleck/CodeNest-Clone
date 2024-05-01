@@ -1,0 +1,108 @@
+.main-section-resources{
+  min-height: calc(100vh - 80px);
+  margin:0px 4.5%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.courses-container{
+  flex: 1;
+  margin-top: 50px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:15px;
+}
+@media(min-width:730px){
+  .courses-container{
+    flex-direction:row;
+    align-items: stretch;
+  }
+}
+.course-container:nth-child(1){
+  --team-member:1;
+  z-index: 3;
+}
+.course-container:nth-child(2){
+  --team-member:2;
+  z-index: 2;
+}
+.course-container:nth-child(3){
+  --team-member:3;
+  z-index: 1;
+}
+.course-container{
+  padding: 30px;
+  max-width: 350px;
+  width:100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  transition:scale 0.2s ease;
+  cursor: pointer;
+  opacity:0;
+  translate: -100px 0px;
+  animation: movement 1s forwards ease; 
+  animation-delay: calc(0.2s * var(--team-member));
+  background-color:var(--light-bg);
+  color: var(--team-txt-color);
+}
+.course-container:hover{
+  scale: 1.05;
+}
+#course-icon{
+  font-size:60px;
+  display: flex;
+  justify-content: center;
+}
+.course-name{
+  text-align:center;
+  font-size: 25px;
+  font-weight: 500;
+  cursor:default;
+  margin-top: 20px;
+}
+@media(min-width:730px) and (max-width:910px){
+  .course-name{
+    width:55%; 
+    text-align: start;
+  }
+  .course-info{
+    text-align: start !important;
+  }
+}
+.course-info{
+  margin: 20px 0px 40px 0px;
+  cursor: default;
+  text-align: center;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+  margin-top:auto;
+}
+.course-btn{
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  background-color: var(--team-txt-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.course-btn a{
+  color: white;
+  height:100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.course-btn:hover{
+  filter: brightness(90%);
+}
